@@ -35,10 +35,11 @@ class PrimaryTop extends Component {
         return (<React.Fragment>
             <div className="primary-top-input">
                 <input type="text" name="city" id="city-input" onChange={(value) => this.onChange(value)} placeholder={this.props && this.props.city ? `${this.props.city.name}, ${this.props.city.country}` : ""}></input>
+
                 <button onClick={() => {
                     this.props.fetchData(this.state.city);
                     this.clearInput()
-                }} >Search City</button>
+                }}><span className="glyphicon glyphicon-map-marker"></span></button>
             </div>
             <div className="primary-top-date">
                 <p>{today}</p>

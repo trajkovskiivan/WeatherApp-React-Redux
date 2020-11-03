@@ -1,7 +1,7 @@
 import React from 'react';
 import calculateStatistics from '../functions/calculateSatistics';
 import {day} from '../functions/dateCalculations';
-import {renderImage, setSituations, setIcon} from '../functions/renderImage';
+import {renderImage, setSituations, setIcon, renderIcon} from '../functions/renderImage';
 
 
 const ForecastCard = (props) => {
@@ -9,7 +9,7 @@ const ForecastCard = (props) => {
     let filteredList = [];
     let s;
     const {calcDay} = props;
-    let futureDay = new Date().getUTCDate() + calcDay
+    let futureDay = new Date().getUTCDay() + calcDay
     let data = props.data.list;
 
 
@@ -36,15 +36,28 @@ const ForecastCard = (props) => {
 
     // console.log(filteredList);
     // console.log(s && s.warmestTime)
+
+
+
     return (
         <React.Fragment>
             <div className="forecast-card">
-                <div> <h5>{day(futureDay)}</h5></div>
-                <div > <p className="future-status">{icon === 'sky' ? `clear sky` : icon}</p> </div>
-                <div><img className="forecast-icon" alt={icon} src={renderImage(icon)} /> </div>
-                <div> <h5> <span className='cold'>{s && Math.round(s.temperature.min)}°</span>  <span className='hot'>{s && Math.round(s.temperature.max)}°</span> </h5></div>
+                <div className='forest-card-div'>
+                    <p className="blue-border-bot">{day(futureDay)}</p>
+                    <p className="span-border-bottom"></p>
+                </div>
+                {/* <div className='forest-card-div'>
+                    <p className="future-status">{icon === 'sky' ? `clear sky` : icon}</p>
+                </div> */}
+                <div className='forest-card-div'>
+                    {/* <img className="forecast-icon" alt={icon} src={renderImage(icon)} /> */}
+                    <span className="iconify" data-icon={renderIcon(icon)} data-inline="false"></span>
+                </div>
+                <div className='forest-card-div'>
+                    <p> <span className='cold'>{s && Math.round(s.temperature.min)}°</span>  <span className='hot'>{s && Math.round(s.temperature.max)}°</span> </p>
+                </div>
             </div>
-            <hr className="hr-title hr-title-primary" />
+            {/* <hr className="hr-title hr-title-primary" /> */}
         </React.Fragment>
     );
 }

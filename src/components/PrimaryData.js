@@ -1,5 +1,5 @@
 import React from 'react';
-import {renderImageFromSingle} from '../functions/renderImage';
+import {renderImageFromSingle, renderIconFromSingle} from '../functions/renderImage';
 
 
 const PrimaryData = (props) => {
@@ -18,13 +18,13 @@ const PrimaryData = (props) => {
                 {/* <button>Click to switch</button> */}
             </div>
             <div className="current-status">
-                <div className='current-status-icon'> <img alt={icon} src={data.list && icon ? renderImageFromSingle(icon) : ""} />  </div>
-                <div className='current-status-temperature'><h3>{data.list && Math.round(data.list[0].main.temp)}<span>°C</span> </h3></div>
+                {/* <div className='current-status-icon'> <img alt={icon} src={data.list && icon ? renderImageFromSingle(icon) : ""} />  </div> */}
+                <div className='current-status-icon'> <span className="iconify" data-icon={data.list && icon ? renderIconFromSingle(icon) : ""} data-inline="false"></span>  </div>
+                <div className='current-status-temperature'><p>{data.list && Math.round(data.list[0].main.temp)}<span>°</span> </p></div>
             </div>
             <div className="text-satus">
                 <p>{data.list && icon ? icon : ""}</p>
-                <p>{data.list && data.list[0].main.humidity}  <span className="iconify" data-icon="wi-humidity" data-inline="false"></span></p>
-
+                <p>{data.list && data.list[0].main.humidity} <span className="iconify" data-icon="wi-humidity" data-inline="false"></span> humidity</p>
             </div>
         </React.Fragment>
     );

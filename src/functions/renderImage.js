@@ -29,10 +29,61 @@ const renderImage = (data) => {
     return path
 }
 
+const renderIcon = (data) => {
+    let dataIcon = "";
+    switch (data) {
+        case 'sky':
+            dataIcon = 'wi-day-sunny'
+            break;
+        case 'rain':
+            dataIcon = 'wi-day-rain'
+            break;
+        case 'clouds':
+            dataIcon = 'wi-day-cloudy'
+            break;
+        case 'thunderstorm':
+            dataIcon = 'wi-day-lightning'
+            break;
+        case 'snow':
+            dataIcon = 'wi-day-sleet'
+            break;
+        case 'mist':
+            dataIcon = 'wi-day-fog'
+            break;
+        default:
+            dataIcon = '';
+            break
+    }
+    // console.log(dataIcon)
+    return dataIcon
+}
+
+const renderIconFromSingle = (data) => {
+    let path = "";
+    if (data.includes("sky")) {
+        path = 'wi-day-sunny';
+    }
+    if (data.includes("rain")) {
+        path = 'wi-day-rain';
+    }
+    if (data.includes("clouds")) {
+        path = 'wi-day-cloudy';
+    }
+    if (data.includes("thunderstorm")) {
+        path = 'wi-day-thunderstorm';
+    }
+    if (data.includes("snow")) {
+        path = 'wi-day-snow-wind';
+    }
+    if (data.includes("mist")) {
+        path = 'wi-day-fog';
+    }
+    return path
+}
+
+
 const renderImageFromSingle = (data) => {
     let path = "";
-
-
     if (data.includes("sky")) {
         path = 'http://openweathermap.org/img/wn/01d@2x.png';
     }
@@ -52,8 +103,10 @@ const renderImageFromSingle = (data) => {
         path = 'http://openweathermap.org/img/wn/01d@2x.png';
     }
     return path
-
 }
+
+
+
 
 const setSituations = (arr, situation) => {
     arr.forEach(el => {
@@ -107,4 +160,4 @@ const setIcon = (situation) => {
 }
 
 
-module.exports = {renderImage, setSituations, setIcon, renderImageFromSingle};
+module.exports = {renderImage, setSituations, setIcon, renderImageFromSingle, renderIcon, renderIconFromSingle};

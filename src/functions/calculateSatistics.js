@@ -1,6 +1,6 @@
 
 
-const calculateStatistics = (data, day) => {
+const calculateStatistics = (data,) => {
     let temperatureSum = 0;
     let pressureSum = 0;
     let highestTemp = data[0];

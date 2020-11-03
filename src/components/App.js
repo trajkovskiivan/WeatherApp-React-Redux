@@ -27,23 +27,29 @@ class App extends Component {
     // console.log(this.props)
     return (
       <div className="wrapper">
-        <div className='primary'>
-          <div className="primary-top">
-            <PrimaryTop city={this.props.weatherData.city} />
+        <div className="wrapper-background">
+          <div className='primary'>
+            <div className="primary-top">
+              <PrimaryTop city={this.props.weatherData.city} />
+            </div>
+            <div className="primary-data">
+              <PrimaryData data={this.props.weatherData} />
+            </div>
+          </div>
+          <div className='card-collection'>
+            <div className='card-collection-wrapper'>
+              <ForecastCard data={this.props.weatherData} calcDay={1} />
+              <ForecastCard data={this.props.weatherData} calcDay={2} />
+              <ForecastCard data={this.props.weatherData} calcDay={3} />
+              <ForecastCard data={this.props.weatherData} calcDay={4} />
+            </div>
+          </div>
 
-          </div>
-          <div className="primary-data">
-            <PrimaryData data={this.props.weatherData} />
-          </div>
+
+
+
         </div>
-        <div className='card-collection'>
-          <ForecastCard data={this.props.weatherData} calcDay={1} />
-          <ForecastCard data={this.props.weatherData} calcDay={2} />
-          <ForecastCard data={this.props.weatherData} calcDay={3} />
-          <ForecastCard data={this.props.weatherData} calcDay={4} />
-          <ForecastCard data={this.props.weatherData} calcDay={5} />
-        </div>
-        <div className="footer">Coded by</div>
+        {/* <div className="footer">Coded by</div> */}
       </div>
     );
   }
