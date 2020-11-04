@@ -41,7 +41,8 @@ body {
                 color: whitesmoke;
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;              
+                justify-content: space-between;    
+                transition: 2.5s;          
 
                 p {
                     padding: 0;
@@ -69,7 +70,7 @@ body {
                         }
                     }
                 
-                    input{
+                    input {
                         background-color: transparent;
                         color: whitesmoke;
                         border: none;
@@ -87,11 +88,11 @@ body {
                             color: whitesmoke;
                         }  
                     }
-                    .primary-top-date p{
-                        padding: 0;
-                        margin: 0;
-                    }
                 }
+                .primary-top-date p {
+                    font-size: 1.7rem;
+                }
+
             }
             .primary-data {
                 height: 80%;
@@ -213,9 +214,175 @@ body {
 
 
 
+@media (max-width: 823px) {
+    .wrapper {    
+        .primary {
+            width: 60%;
+            .primary-top {
+                display: flex;
+                flex-direction: column;
+                // align-content: center;
+                // padding: 20px auto;
+                // color: red;
+                div {
+                    text-align: center;
+                    letter-spacing: 0.25rem;
+                }
+                input {
+                    text-align: right;
+                }
+                .primary-top-input {
+                    .input {
+                        text-align: center;
+                    }
+                }
+            }
+            .primary-data {
+                .current-status {
+                    height: 55%;
+                }
+                .text-satus {
+                    font-size: 1.8rem;
+                    text-align: center;
+                }
+            }
+            
+        }
+
+        .card-collection {
+            width: 65%
+        }
+
+    }
+}
 
 
+@media (max-width: 752px) {
+    .wrapper {    
+        .primary {
+            width: 65%;
+            .primary-top {
+                div {
+                    letter-spacing: 0.2rem;
+                }
+            }
+        }
+        .card-collection {
+            width: 70%
+        }
+    }
+}
 
+@media (max-width: 700px) {
+    .wrapper {    
+        .primary {
+            width: 70%;
+            .primary-top {
+                div {
+                    letter-spacing: 0.18rem;
+                }
+            }
+        }
+        .card-collection {
+            width: 75%
+        }
+    }
+}
+
+@media (max-width: 660px) {
+    .wrapper {    
+        .primary {
+            width: 75%;
+            .primary-top {
+                div {
+                    letter-spacing: 0.15rem;
+                }
+            }
+        }
+        .card-collection {
+            width: 80%
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .wrapper {    
+        .primary {
+            width: 85%;
+            .primary-top {
+                div {
+                    letter-spacing: 0.15rem;
+                }
+            }
+        }
+        .card-collection {
+            width: 90%
+        }
+    }
+}
+@media (max-width: 550px) {
+    .wrapper {
+        background-color: rgb(0, 247, 255);
+    
+        .primary {
+            width: 100%;
+            .primary-top {
+                div {
+                    letter-spacing: 0.13rem;
+                }
+            }
+        }
+        .card-collection {
+            width: 98%
+        }
+    }
+}
+
+
+@media (max-width: 550px) {
+    .wrapper {
+        background-color: rgb(0, 247, 255);
+    
+        .primary {
+            width: 100%;
+            .primary-top {
+                div {
+                    letter-spacing: 0.1rem;
+                }
+            }
+        }
+        .card-collection {
+            width: 100%
+        }
+    }
+}
+
+@media (max-width: 410px) {
+    .wrapper {    
+        .primary {
+            width: 100%;
+            .primary-top {
+                div {
+                    letter-spacing: 0.1rem;
+                }
+            }
+        }
+        .card-collection {
+            .card-collection-wrapper {
+                display: block;
+                width: 100%;
+                .forecast-card {
+                    display: inline-block;
+                    height: 85%;
+                    width: 40%;
+                    padding: 0;
+                    margin: 5%;
+                    // border: 1px solid black;
+                }
+            }
+        }
+    }
+}
 
 
 

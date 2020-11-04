@@ -14,6 +14,17 @@ class PrimaryTop extends Component {
             city: ""
         }
     }
+    componentDidMount() {
+        document.addEventListener('keydown', (key) => {
+            // console.log(key)
+            if (key.key === 'Enter') {
+                console.log('Enter was pressed')
+                this.props.fetchData(this.state.city);
+                this.clearInput()
+            }
+
+        })
+    }
 
     onChange = (e) => {
         this.setState({
@@ -28,18 +39,21 @@ class PrimaryTop extends Component {
     }
 
     render() {
-        console.log(this.props)
-        console.log(this.state)
+        // console.log(this.props)
+        // console.log(this.state)
         // console.log(this.props.city)
         // console.log(this.state.city)
         return (<React.Fragment>
             <div className="primary-top-input">
-                <input type="text" name="city" id="city-input" onChange={(value) => this.onChange(value)} placeholder={this.props && this.props.city ? `${this.props.city.name}, ${this.props.city.country}` : ""}></input>
+                <input type="text" name="city" id="city-input"
+                    onChange={(value) => this.onChange(value)} placeholder={this.props && this.props.city ? `${this.props.city.name}, ${this.props.city.country}` : ""}></input>
 
-                <button onClick={() => {
-                    this.props.fetchData(this.state.city);
-                    this.clearInput()
-                }}><span className="glyphicon glyphicon-map-marker"></span></button>
+                <button
+
+                    onClick={() => {
+                        this.props.fetchData(this.state.city);
+                        this.clearInput()
+                    }}><span className="glyphicon glyphicon-map-marker"></span></button>
             </div>
             <div className="primary-top-date">
                 <p>{today}</p>
@@ -49,7 +63,7 @@ class PrimaryTop extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
+    // console.log(state);
     return {
         weatherData: state.weatherData
     }

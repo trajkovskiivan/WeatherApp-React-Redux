@@ -1,5 +1,5 @@
 import React from 'react';
-import {renderImageFromSingle, renderIconFromSingle} from '../functions/renderImage';
+import {renderIconFromSingle} from '../functions/renderImage';
 
 
 const PrimaryData = (props) => {
@@ -11,7 +11,7 @@ const PrimaryData = (props) => {
         // console.log(props.data.list[0].weather[0].description)
         icon = props.data.list[0].weather[0].description;
     }
-
+    // console.log(icon)
     return (
         <React.Fragment>
             <div className="onoffswitch">

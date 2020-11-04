@@ -1,7 +1,7 @@
 import React from 'react';
 import calculateStatistics from '../functions/calculateSatistics';
 import {day} from '../functions/dateCalculations';
-import {renderImage, setSituations, setIcon, renderIcon} from '../functions/renderImage';
+import {setSituations, setIcon, renderIcon} from '../functions/renderImage';
 
 
 const ForecastCard = (props) => {
